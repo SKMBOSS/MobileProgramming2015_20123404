@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 class AAA {
 	public void readFile() {
-		String path = AAA.class.getResource("").getPath();
+		String path = AAA.class.getResource("").getPath();//파일경로받기
 		String fname = path + "a.text";
 
 		File f;
