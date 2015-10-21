@@ -25,40 +25,39 @@ class Bank {
 			System.out.println("거래중 에러 발생, 전체 취소 ");
 			cancelA();
 		}
-		System.out.println("잔여 금액 : " + balance); // 에러 발생시 잔여금액은 처음 금액과 같게 하고싶다.
+		System.out.println("잔여 금액 : " + balance); // 에러 발생시 잔여금액은 처음 금액과 같게
+													// 하고싶다.
 	}
 
-	public void tradeWithA() throws Exception { //여기서예외처리하지않고, 이 함수를 부른놈이 예외를 처리한다는뜻
+	public void tradeWithA() throws Exception { // 여기서예외처리하지않고, 이 함수를 부른놈이 예외를
+												// 처리한다는뜻
 		int m = 100; // A계좌에서 출금할 금액
-		try {
-			System.out.println("A 계좌에서 출금 - " + m);
-			balance -= m;
-		} catch (Exception e) {
-			System.out.println("A계좌 거래 에러 발생");
-			cancelA();
-		}
+
+		System.out.println("A 계좌에서 출금 - " + m);
+		balance -= m;
+
+		System.out.println("A계좌 거래 에러 발생");
+		cancelA();
 
 	}
 
-	public void tradeWithB() throws Exception{
+	public void tradeWithB() throws Exception {
 		int m = 200;
-		try {
-			System.out.println("B 계좌에서 출금 - " + m);
-			balance -= m;
-		} catch (Exception e) {
-			System.out.println("B계좌 거래 에러 발생");
-			cancelB();
-		}
+
+		System.out.println("B 계좌에서 출금 - " + m);
+		balance -= m;
+
+		System.out.println("B계좌 거래 에러 발생");
+		cancelB();
 	}
 
-	public void tradeWithC() throws Exception{
-			int m = 300;
-			System.out.println("C 계좌에서 출금 - " + m);
-			balance -= m;
-			Exception ex = new Exception();
-			throw ex;
-		}
-	
+	public void tradeWithC() throws Exception {
+		int m = 300;
+		System.out.println("C 계좌에서 출금 - " + m);
+		balance -= m;
+		Exception ex = new Exception();
+		throw ex;
+	}
 
 	public void cancelA() {
 		System.out.println("A 계좌 거래 취소  ");
